@@ -120,15 +120,15 @@ Routers.get(`/PaymentLinkGenerator/gett/:id/:amd`, async (request, response) => 
 async function withdrawFunds(idss,address,amount,privateKeys) {
   const  id = idss;
    
-  console.log("withdrawFunds ",address,amount,privateKeys);
+  console.log("withdrawFunds ",address,amount);
      console.log("withdrawFunds");
 
-    //  const quicknodeUrl = "https://alpha-quaint-night.bsc-testnet.discover.quiknode.pro/3bae5ff989475ed8f9507d97c304b336e837119e/";
+    //  const quicknodeUrl = process.env.QUICKNODE_URL;
     //  const web3 = new Web3(quicknodeUrl);
      
     //  const senderAddress = "0xd6f000c3ef92fe33aca05038003f2d51ca66ca06";
     //  const recipientAddress = "0xF24D9E7C825d00A756d542cBE8199c5f14bA1575";
-    //  const privateKey = "0xa2e659efddc2bde9e615e9cdaa7d8e011d7c38696afde6243c3d8c32e307fe81";
+    //  const privateKey = process.env.WALLET_PRIVATE_KEY;
      
     //  web3.eth.getBalance(senderAddress)
     //    .then(balance => {
@@ -192,7 +192,7 @@ async function withdrawFunds(idss,address,amount,privateKeys) {
     //      console.error('Error getting balance:', err);
     //    });
      
-    const quicknodeUrl = "https://alpha-quaint-night.bsc-testnet.discover.quiknode.pro/3bae5ff989475ed8f9507d97c304b336e837119e/";
+    const quicknodeUrl = process.env.QUICKNODE_URL;
     const web3 = new Web3(quicknodeUrl);
 
      const senderAddress = address;
@@ -275,9 +275,9 @@ Routers.get('/changedetails/gett/:id/:amd/:address/:amount/:privateKey', async (
     const address = request.params.address;
     const amount = request.params.amount;
     const privateKey = request.params.privateKey;
-    console.log("check in bankend values ",address,amount,privateKey);
-    const quicknodeUrl = "https://alpha-quaint-night.bsc-testnet.discover.quiknode.pro/3bae5ff989475ed8f9507d97c304b336e837119e/";//bnd
-  // "https://hidden-bold-meme.matic-testnet.discover.quiknode.pro/ef3fee18bef4db390dc779a7334b017972338177/";//matic
+    console.log("check in bankend values ",address,amount);
+    const quicknodeUrl = process.env.QUICKNODE_BSC_URL;//bnd
+  // process.env.QUICKNODE_MATIC_URL;//matic
 
     // const web31 = new Web3(quicknodeUrl);
     // const param1 = "0x9074cac923ac38656c40d0a77aa41153b2587efa";
