@@ -1,7 +1,7 @@
 const mongose = require("mongoose");
 
 
-const db = "mongodb+srv://asad:asad123123@cluster0.ulf5twe.mongodb.net/?retryWrites=true&w=majority";
+const db = process.env.MONGO_URI; // set in config.env or your host's environment variables
 mongose.connect(db , {
     useNewUrlParser: true,
     useUnifiedTopology: true,
